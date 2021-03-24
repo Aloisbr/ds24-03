@@ -25,15 +25,21 @@ class DrawerMenu extends StatelessWidget {
             },
           ),
           ListTile(
-            title: Text('Profile'),
+            title: Text('User Infos'),
             onTap: () {
-              Navigator.pushReplacementNamed(context, '/profile');
+              Navigator.pushReplacementNamed(context, '/user/infos');
             },
           ),
           ListTile(
-            title: Text('School'),
+            title: Text('Home'),
             onTap: () {
-              Navigator.pushNamed(context, '/school');
+              Navigator.pushNamed(context, '/home');
+            },
+          ),
+          ListTile(
+            title: Text('Sign up'),
+            onTap: () {
+              Navigator.pushNamed(context, '/register');
             },
           ),
           ListTile(

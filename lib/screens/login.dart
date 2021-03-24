@@ -1,6 +1,5 @@
 import 'package:dwm14/components/field.dart';
 import 'package:dwm14/constants/firebase.dart';
-import 'package:dwm14/components/globals.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
@@ -31,7 +30,6 @@ class _LoginScreenState extends State<LoginScreen> {
                     onSaved: (value) {
                       setState(() {
                         email = value;
-                        userEmail = value;
                       });
                     },
                     validator: (value) {

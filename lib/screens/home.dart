@@ -32,7 +32,7 @@ class _HomeScreenState extends State<HomeScreen> {
               style: TextStyle(
                   color: Colors.black,
                   fontWeight: FontWeight.bold,
-                  fontSize: 24)),
+                  fontSize: 50)),
           Padding(
             padding: EdgeInsets.all(8.0),
             child: Row(
