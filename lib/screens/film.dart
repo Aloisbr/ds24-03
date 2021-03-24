@@ -5,15 +5,13 @@ class FilmScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final ItemArguments args = ModalRoute.of(context).settings.arguments;
     final Movie movie = args.movie;
-  print( movie.actors);
-    List actors = lsToSubList(movie.actors);
 
     return Scaffold(
         appBar: AppBar(
           title: Text('Film details: ' + movie.title),
         ),
         body: SingleChildScrollView(
-                  child: SafeArea(
+          child: SafeArea(
             child: Center(
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -40,7 +38,7 @@ class FilmScreen extends StatelessWidget {
                       )),
                   SizedBox(height: 30),
                   Container(
-                    child: ListView.builder(
+                    /*child: ListView.builder(
                       scrollDirection: Axis.vertical,
                       shrinkWrap: true,
                       itemCount: movie.kind.length,
@@ -50,14 +48,29 @@ class FilmScreen extends StatelessWidget {
                           child: Text(movie.kind[index]),
                         );
                       },
-                    ),
+                    ),*/
                   ),
                   Text(movie.kind.join(', ')),
+                  SizedBox(height: 30),
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 20.0),
                     child: Text(movie.plot),
                   ),
+                  SizedBox(height: 30),
                   Text( movie.actors.join(', ')),
+                  SizedBox(height: 30),
+                  Row(
+                    children:[
+                      Container(
+                        child: Column(children: [
+                          Text('critics')
+                        ]
+                          
+                        ),
+                      )
+                    ]
+                  )
+
                   
 
                 ],
