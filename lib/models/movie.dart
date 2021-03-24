@@ -18,16 +18,15 @@ class Movie {
 
   fromJson(json) {
     return Movie(
-      title: json['title'],
-      plot: json['plot'],
-      runtime: json['runtime'],
-      year: json['year'],
-      poster: json['poster'],
-      actors: json['actors'],
-      kind: json['kind'],
-      ratings: json['ratings'],
-      releasedDate: json['releasedDate']
-    );
+        title: json['title'],
+        plot: json['plot'],
+        runtime: json['runtime'],
+        year: json['year'],
+        poster: json['poster'],
+        actors: json['actors'],
+        kind: json['kind'],
+        ratings: json['ratings'],
+        releasedDate: json['releasedDate']);
   }
 }
 

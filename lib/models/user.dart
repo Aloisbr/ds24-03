@@ -1,18 +1,14 @@
-class User {
-  final String email, name;
+class UserInfos {
+  final String email, name, firstName, city;
 
-  User({this.email, this.name});
+  UserInfos({this.email, this.name, this.firstName, this.city});
 
   fromJson(json) {
-    return User(
+    return UserInfos(
       email: json['email'],
       name: json['name'],
+      firstName: json['firstName'],
+      city: json['city'],
     );
   }
-}
-
-class ItemArguments {
-  final String text;
-
-  ItemArguments({this.text});
 }

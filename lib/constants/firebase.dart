@@ -21,12 +21,16 @@ getMovies() async {
   return result;
 }
 
-getUserInfos(String email) async {
+getUserInfos() async {
   List result = [];
-  final userInfos =
-      await firestore.collection("users").where((email) => email.email).get();
+  final userInfos = await firestore
+      .collection('users')
+      .where('email', isEqualTo: isLogged().email)
+      .get();
   if (userInfos.docs != null) {
-    result = userInfos.docs.map((doc) => Movie().fromJson(doc.data())).toList();
+    result =
+        userInfos.docs.map((doc) => UserInfos().fromJson(doc.data())).toList();
   }
   return result;
 }
+//
