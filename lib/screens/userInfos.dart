@@ -32,18 +32,43 @@ class _UserScreenState extends State<UserScreen> {
                   return Center(child: Text('Please Login'));
                 }
                 List userInfos = snapshot.data;
-                return Column(children: [
-                  ListTile(
+                return Padding(
+                  padding: const EdgeInsets.all(15.0),
+                  child: Column(children: [
+                    ListTile(
+                      subtitle: Text('Name'),
                       title: Text(
-                    userInfos[0].name,
-                  )),
-                  ListTile(
-                    title: Text(userInfos[0].email),
-                  ),
-                  ListTile(
-                    title: Text(userInfos[0].city),
-                  ),
-                ]);
+                        userInfos[0].name,
+                      ),
+                    ),
+                    ListTile(
+                      subtitle: Text('First Name'),
+                      title: Text(
+                        userInfos[0].firstName,
+                      ),
+                    ),
+                    ListTile(
+                      subtitle: Text('Email'),
+                      title: Text(userInfos[0].email),
+                    ),
+                    ListTile(
+                      subtitle: Text('City'),
+                      title: Text(userInfos[0].city),
+                    ),
+                    SizedBox(
+                      height: 20,
+                    ),
+                    ListTile(
+                      title: Text('Sign Out',
+                          style: TextStyle(
+                              color: Colors.red, fontWeight: FontWeight.bold)),
+                      onTap: () async {
+                        await firebaseAuth.signOut();
+                        Navigator.pushReplacementNamed(context, '/login');
+                      },
+                    )
+                  ]),
+                );
             }
           },
         ),

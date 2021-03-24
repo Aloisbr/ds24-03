@@ -10,6 +10,7 @@ class RegisterScreen extends StatefulWidget {
 class _RegisterScreenState extends State<RegisterScreen> {
   GlobalKey<FormState> _formKey = GlobalKey<FormState>();
   String name = '';
+  String firstName = '';
   String city = '';
   String email = '';
   String password = '';
@@ -29,6 +30,20 @@ class _RegisterScreenState extends State<RegisterScreen> {
             key: _formKey,
             child: Column(
               children: [
+                TextFormField(
+                  onSaved: (value) {
+                    setState(() {
+                      firstName = value;
+                    });
+                  },
+                  validator: (value) {
+                    if (value.isEmpty) {
+                      return 'Empty';
+                    }
+                    return null;
+                  },
+                  decoration: InputDecoration(labelText: 'First Name'),
+                ),
                 TextFormField(
                   onSaved: (value) {
                     setState(() {
@@ -105,6 +120,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                           final docReference = firestore.collection('users');
                           docReference.add({
                             'name': name,
+                            'firstName': firstName,
                             'email': userCredential.user.email,
                             'city': city
                           }).catchError((error) {
