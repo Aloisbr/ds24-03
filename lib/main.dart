@@ -4,6 +4,7 @@ import 'package:dwm14/screens/error.dart';
 import 'package:dwm14/screens/loading.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:adaptive_theme/adaptive_theme.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -23,14 +24,23 @@ class App extends StatelessWidget {
           }
 
           if (snapshot.connectionState == ConnectionState.done) {
-            return MaterialApp(
-              title: 'Flutter Demo',
-              theme: ThemeData(
-                primarySwatch: Colors.deepPurple,
-              ),
-              routes: routes,
-              initialRoute: isLogged() != null ? '/home' : '/connect ',
-            );
+            return AdaptiveTheme(
+                light: ThemeData(
+                  brightness: Brightness.light,
+                  primarySwatch: Colors.blue,
+                ),
+                dark: ThemeData(
+                  brightness: Brightness.dark,
+                  primarySwatch: Colors.orange,
+                ),
+                initial: AdaptiveThemeMode.light,
+                builder: (theme, darkTheme) => MaterialApp(
+                      title: 'Flutter Demo',
+                      theme: theme,
+                      darkTheme: darkTheme,
+                      routes: routes,
+                      initialRoute: isLogged() != null ? '/home' : '/connect',
+                    ));
           }
 
           return LoadingScreen();
