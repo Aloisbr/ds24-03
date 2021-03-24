@@ -9,12 +9,13 @@ import 'package:dwm14/screens/school.dart';
 import 'package:flutter/material.dart';
 
 final Map<String, WidgetBuilder> routes = {
+  '/connect': (context) => Connect(),
   '/register': (context) => RegisterScreen(),
   '/login': (context) => LoginScreen(),
+
   '/home': (context) => HomeScreen(),
   '/detail': (context) => DetailScreen(),
   '/user/infos': (context) => UserScreen(),
   '/school': (context) => SchoolScreen(),
-  '/connect': (context) => Connect(),
   '/film': (context) => FilmScreen(),
 };

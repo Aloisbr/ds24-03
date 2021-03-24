@@ -165,7 +165,12 @@ class Rating extends StatelessWidget {
             SizedBox(height: 20),
             Text(movie.ratings[0]['source']),
             SizedBox(height: 10),
-            Text(movie.ratings[0]['value']),
+            Text(
+              movie.ratings[0]['value'],
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
+              )
+            ),
           ]),
         ),
         
@@ -179,7 +184,12 @@ class Rating extends StatelessWidget {
             SizedBox(height: 20),
             Text(movie.ratings[2]['source']),
             SizedBox(height: 10),
-            Text(movie.ratings[2]['value']),
+            Text(
+              movie.ratings[2]['value'],
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
+              )
+            ),
           ]),
         ),
 
@@ -193,7 +203,12 @@ class Rating extends StatelessWidget {
             SizedBox(height: 20),
             Text(movie.ratings[1]['source']),
             SizedBox(height: 10),
-            Text(movie.ratings[1]['value']),
+            Text(
+              movie.ratings[1]['value'],
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
+              )
+            ),
           ]),
         ),
       ]

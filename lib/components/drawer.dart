@@ -1,6 +1,5 @@
 import 'package:adaptive_theme/adaptive_theme.dart';
 import 'package:dwm14/constants/firebase.dart';
-import 'package:dwm14/models/movie.dart';
 import 'package:flutter/material.dart';
 
 class DrawerMenu extends StatelessWidget {
@@ -44,8 +43,8 @@ class DrawerMenu extends StatelessWidget {
           ),
           ListTile(
             title: Text('Sign Out',
-                style:
-                    TextStyle(color: Colors.red, fontWeight: FontWeight.bold)),
+              style:
+                TextStyle(color: Colors.red, fontWeight: FontWeight.bold)),
             onTap: () async {
               await firebaseAuth.signOut();
               Navigator.pushReplacementNamed(context, '/connect');
