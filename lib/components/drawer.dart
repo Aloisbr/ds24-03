@@ -1,3 +1,4 @@
+import 'package:adaptive_theme/adaptive_theme.dart';
 import 'package:dwm14/constants/firebase.dart';
 import 'package:dwm14/models/movie.dart';
 import 'package:flutter/material.dart';
@@ -18,10 +19,9 @@ class DrawerMenu extends StatelessWidget {
             ),
           ),
           ListTile(
-            title: Text('Detail'),
+            title: Text('Switch theme'),
             onTap: () {
-              Navigator.pushReplacementNamed(context, '/detail',
-                  arguments: ItemArguments(text: 'Detail Screen'));
+              AdaptiveTheme.of(context).toggleThemeMode();
             },
           ),
           ListTile(
