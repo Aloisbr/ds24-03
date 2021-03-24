@@ -42,7 +42,7 @@ class DrawerMenu extends StatelessWidget {
                     TextStyle(color: Colors.red, fontWeight: FontWeight.bold)),
             onTap: () async {
               await firebaseAuth.signOut();
-              Navigator.pushReplacementNamed(context, '/login');
+              Navigator.pushReplacementNamed(context, '/connect');
             },
           ),
         ],

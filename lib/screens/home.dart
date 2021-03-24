@@ -29,10 +29,10 @@ class _HomeScreenState extends State<HomeScreen> {
       child: Column(
         children: [
           Text('Business',
-              style: TextStyle(
-                  color: Colors.black,
-                  fontWeight: FontWeight.bold,
-                  fontSize: 24)),
+            style: TextStyle(
+              color: Colors.black,
+              fontWeight: FontWeight.bold,
+              fontSize: 24)),
           Padding(
             padding: EdgeInsets.all(8.0),
             child: Row(
@@ -77,35 +77,36 @@ class _HomeScreenState extends State<HomeScreen> {
 
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          title: Text('Flutter'),
-        ),
-        drawerEnableOpenDragGesture: !disable,
-        drawer: DrawerMenu(),
-        body: SafeArea(
-          child: list[_selectedPage],
-        ),
-        bottomNavigationBar: BottomNavigationBar(
-          items: [
-            BottomNavigationBarItem(
-              icon: Icon(Icons.home),
-              label: 'Home',
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.business),
-              label: 'Business',
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.school),
-              label: 'School',
-            ),
-          ],
-          currentIndex: _selectedPage,
-          selectedItemColor: Colors.red[800],
-          onTap: (index) {
-            _onTap(index);
-          },
-        ));
+      appBar: AppBar(
+        title: Text('Flutter'),
+      ),
+      drawerEnableOpenDragGesture: !disable,
+      drawer: DrawerMenu(),
+      body: SafeArea(
+        child: list[_selectedPage],
+      ),
+      bottomNavigationBar: BottomNavigationBar(
+        items: [
+          BottomNavigationBarItem(
+            icon: Icon(Icons.home),
+            label: 'Home',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.business),
+            label: 'Business',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.school),
+            label: 'School',
+          ),
+        ],
+        currentIndex: _selectedPage,
+        selectedItemColor: Colors.red[800],
+        onTap: (index) {
+          _onTap(index);
+        },
+      )
+    );
   }
 }
 

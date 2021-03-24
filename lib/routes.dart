@@ -1,4 +1,6 @@
+import 'package:dwm14/screens/connect.dart';
 import 'package:dwm14/screens/detail.dart';
+import 'package:dwm14/screens/film.dart';
 import 'package:dwm14/screens/home.dart';
 import 'package:dwm14/screens/login.dart';
 import 'package:dwm14/screens/profile.dart';
@@ -13,4 +15,6 @@ final Map<String, WidgetBuilder> routes = {
   '/detail': (context) => DetailScreen(),
   '/profile': (context) => ProfileScreen(),
   '/school': (context) => SchoolScreen(),
+  '/connect': (context) => Connect(),
+  '/film': (context) => FilmScreen(),
 };

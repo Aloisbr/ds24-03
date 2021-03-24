@@ -1,4 +1,5 @@
 import 'package:dwm14/constants/firebase.dart';
+import 'package:dwm14/models/movie.dart';
 import 'package:flutter/material.dart';
 
 class Landing extends StatelessWidget {
@@ -29,19 +30,31 @@ class Landing extends StatelessWidget {
                 scrollDirection: Axis.horizontal,
                 itemCount: movies.length,
                 itemBuilder: (context, index) {
+
                   return Padding(
+                      
                       padding: EdgeInsets.all(8),
-                      child: Column(
-                        children: [
-                          Container(
-                            height: 200,
-                            width: 88,
-                            decoration: BoxDecoration(
-                                image: DecorationImage(
-                                    image: NetworkImage(movies[index].poster))),
-                          ),
-                          Text(movies[index].title),
-                        ],
+                      child: GestureDetector(
+                        onTap: (){
+                          Navigator.pushNamed(
+                            context, 
+                            '/film',
+                            arguments: ItemArguments(movie: movies[index])
+                          );
+                        },
+                        child: Column(
+                          children: [
+                            Container(
+                              height: 200,
+                              width: 88,
+                              decoration: BoxDecoration(
+                                  image: DecorationImage(
+                                      image: NetworkImage(movies[index].poster))),
+                            ),
+                            Text(movies[index].title),
+                            Text(movies[index].year),
+                          ],
+                        ),
                       ));
                 },
               );
