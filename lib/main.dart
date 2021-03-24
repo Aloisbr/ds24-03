@@ -1,7 +1,7 @@
-import 'package:first/constants/firebase.dart';
-import 'package:first/routes.dart';
-import 'package:first/screens/error.dart';
-import 'package:first/screens/loading.dart';
+import 'package:dwm14/constants/firebase.dart';
+import 'package:dwm14/routes.dart';
+import 'package:dwm14/screens/error.dart';
+import 'package:dwm14/screens/loading.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 

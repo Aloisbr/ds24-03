@@ -1,5 +1,5 @@
-import 'package:first/constants/firebase.dart';
-import 'package:first/models/movie.dart';
+import 'package:dwm14/constants/firebase.dart';
+import 'package:dwm14/models/movie.dart';
 import 'package:flutter/material.dart';
 
 class DrawerMenu extends StatelessWidget {
@@ -33,7 +33,7 @@ class DrawerMenu extends StatelessWidget {
           ListTile(
             title: Text('School'),
             onTap: () {
-              Navigator.pushReplacementNamed(context, '/school');
+              Navigator.pushNamed(context, '/school');
             },
           ),
           ListTile(

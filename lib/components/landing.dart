@@ -1,4 +1,4 @@
-import 'package:first/constants/firebase.dart';
+import 'package:dwm14/constants/firebase.dart';
 import 'package:flutter/material.dart';
 
 class Landing extends StatelessWidget {

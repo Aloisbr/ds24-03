@@ -1,5 +1,5 @@
-import 'package:first/components/drawer.dart';
-import 'package:first/models/movie.dart';
+import 'package:dwm14/components/drawer.dart';
+import 'package:dwm14/models/movie.dart';
 import 'package:flutter/material.dart';
 
 class DetailScreen extends StatelessWidget {

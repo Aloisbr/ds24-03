@@ -9,7 +9,7 @@ class UserScreen extends StatelessWidget {
         body: SafeArea(
             child: Column(
           children: [
-            Text(),
+            //Text(),
           ],
         )));
   }

@@ -1,9 +1,9 @@
-import 'package:first/screens/detail.dart';
-import 'package:first/screens/home.dart';
-import 'package:first/screens/login.dart';
-import 'package:first/screens/profile.dart';
-import 'package:first/screens/register.dart';
-import 'package:first/screens/school.dart';
+import 'package:dwm14/screens/detail.dart';
+import 'package:dwm14/screens/home.dart';
+import 'package:dwm14/screens/login.dart';
+import 'package:dwm14/screens/profile.dart';
+import 'package:dwm14/screens/register.dart';
+import 'package:dwm14/screens/school.dart';
 import 'package:flutter/material.dart';
 
 final Map<String, WidgetBuilder> routes = {

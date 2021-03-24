@@ -1,6 +1,6 @@
-import 'package:first/components/drawer.dart';
-import 'package:first/components/landing.dart';
-import 'package:first/screens/detail.dart';
+import 'package:dwm14/components/drawer.dart';
+import 'package:dwm14/components/landing.dart';
+import 'package:dwm14/screens/detail.dart';
 import 'package:flutter/material.dart';
 
 import '../components/square.dart';
@@ -112,11 +112,11 @@ class _HomeScreenState extends State<HomeScreen> {
 class RowCube extends StatelessWidget {
   const RowCube({
     Key key,
-    this.firstCubeColor,
+    this.dwm14CubeColor,
     this.secondCubeColor,
   }) : super(key: key);
 
-  final firstCubeColor;
+  final dwm14CubeColor;
   final secondCubeColor;
 
   @override
@@ -125,7 +125,7 @@ class RowCube extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         Square(
-          color: firstCubeColor,
+          color: dwm14CubeColor,
         ),
         SizedBox(
           width: 10,
