@@ -19,19 +19,6 @@ class FilmScreen extends StatelessWidget {
                   SizedBox(height: 30),
                   CardMovie(movie: movie),
                   SizedBox(height: 25),
-                  Container(
-                    /*child: ListView.builder(
-                      scrollDirection: Axis.vertical,
-                      shrinkWrap: true,
-                      itemCount: movie.kind.length,
-                      itemBuilder: (context, index) {
-                        return Padding(
-                          padding: EdgeInsets.all(8),
-                          child: Text(movie.kind[index]),
-                        );
-                      },
-                    ),*/
-                  ),
                   Text(
                     movie.kind.join(', '),
                     style: TextStyle(

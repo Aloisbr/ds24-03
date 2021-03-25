@@ -27,7 +27,7 @@ class Connect extends StatelessWidget{
                       fontSize: 25,
                     ),
                   ),
-                  child: Text('Connexion'),
+                  child: Text('Login'),
                 ),
               ),
               SizedBox(
@@ -45,7 +45,7 @@ class Connect extends StatelessWidget{
                       fontSize: 25,
                     ),
                   ),
-                  child: Text('Inscription'),
+                  child: Text('Register'),
                 ),
               ),
 

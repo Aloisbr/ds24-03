@@ -13,26 +13,29 @@ class DrawerMenu extends StatelessWidget {
             decoration: BoxDecoration(color: Colors.blue),
             child: Row(
               children: [
-                Text('Movies'),
+                Text('Movies',
+                  style: TextStyle(
+                    fontSize: 35,
+                    fontWeight: FontWeight.w700,
+                    color: Colors.blue[100]
+                  )),
               ],
             ),
           ),
           ListTile(
-            title: Text('Switch theme'),
+            title: Text('Switch theme',
+              style: 
+                TextStyle(color: Colors.grey[600])
+            ),
             onTap: () {
               AdaptiveTheme.of(context).toggleThemeMode();
             },
           ),
+          
           ListTile(
             title: Text('Home'),
             onTap: () {
               Navigator.pushNamed(context, '/home');
-            },
-          ),
-          ListTile(
-            title: Text('User Infos'),
-            onTap: () {
-              Navigator.pushReplacementNamed(context, '/user/infos');
             },
           ),
           ListTile(
@@ -42,11 +45,12 @@ class DrawerMenu extends StatelessWidget {
             },
           ),
           ListTile(
-            title: Text('Sign up'),
+            title: Text('User Infos'),
             onTap: () {
-              Navigator.pushNamed(context, '/register');
+              Navigator.pushReplacementNamed(context, '/user/infos');
             },
           ),
+
           ListTile(
             title: Text('Sign Out',
               style:

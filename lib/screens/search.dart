@@ -43,27 +43,7 @@ class _SearchScreenState extends State<SearchScreen> {
                   for (var i = 0; i < totalmovies.length; i++) {
                     moviesTitles.add(totalmovies[i].title.toString());
                   }
-                  //List movies= (sort != null) ? sortMovies(sort, totalmovies) : totalmovies;
-                  //String title= (sort != null) ? sort : 'Movies';
-                  return Container(
-                    //height: 200,
-                    //width: 200,
-                  child:ListSearch(moviesTitles: moviesTitles, movies: totalmovies));/*Container(
-                    child: Column(
-                      children: [
-                        TextField(
-                          controller: _textController,
-                          onChanged: (value) {
-                            setState(() {
-                              search = value;
-                            });
-                          },
-                        ),
-                        Container(child: Text(search))
-                      ],
-                      mainAxisAlignment: MainAxisAlignment.center,
-                    ),
-                  );*/
+                  return Container(child:ListSearch(moviesTitles: moviesTitles, movies: totalmovies));
               }
             }),
       ),
