@@ -38,6 +38,7 @@ class App extends StatelessWidget {
                       title: 'Flutter Demo',
                       theme: theme,
                       darkTheme: darkTheme,
+                      debugShowCheckedModeBanner: false,
                       routes: routes,
                       initialRoute: isLogged() != null ? '/home' : '/connect',
                     ));
