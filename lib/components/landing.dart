@@ -4,20 +4,31 @@ import 'package:dwm14/screens/home.dart';
 import 'package:flutter/material.dart';
 
 class Landing extends StatelessWidget {
-  const Landing({Key key, this.sort = 'all'}) : super(key: key);
+  const Landing({
+    Key key,
+    this.sort= 'all'
+  }) : super(key: key);
 
   final String sort;
 
+
   @override
   Widget build(BuildContext context) {
+
     return FutureBuilder(
-        future: getMovies(),
-        builder: (context, snapshot) {
-          switch (snapshot.connectionState) {
-            case ConnectionState.waiting: // en attente
+      future: getMovies(),
+      builder: (context, snapshot) {
+            
+        switch (snapshot.connectionState) {
+          case ConnectionState.waiting: // en attente
+            return Center(
+              child: SizedBox(
+                width: 30, height: 30, child: CircularProgressIndicator()),
+            );
+          default: // Future terminée
+            if (!snapshot.hasData) {
               return Center(
-                child: SizedBox(
-                    width: 30, height: 30, child: CircularProgressIndicator()),
+                child: Text('No movies'),
               );
             }
             List totalmovies = snapshot.data;
@@ -27,7 +38,6 @@ class Landing extends StatelessWidget {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
-                  Container(height: 350, child: ListMovie(movies: movies)),
                   SizedBox(height: 30),
                   Text(title,
                     style: TextStyle(
@@ -42,15 +52,16 @@ class Landing extends StatelessWidget {
                   ),
                   Sort()
                 ],
-              ));
-          }
-        });
+              )
+            );
+        }
+      });
   }
 
-  List sortMovies(String sort, List movies) {
-    List sortMovies = [];
+  List sortMovies(String sort, List movies){
+    List sortMovies= [];
     for (var movie in movies) {
-      if (movie.kind.contains(sort)) sortMovies.add(movie);
+      if( movie.kind.contains(sort)) sortMovies.add(movie);
     }
     return sortMovies;
   }
@@ -243,12 +254,17 @@ class ListMovie extends StatelessWidget {
       scrollDirection: Axis.horizontal,
       itemCount: movies.length,
       itemBuilder: (context, index) {
+
         return Padding(
+            
             padding: EdgeInsets.all(8),
             child: GestureDetector(
-              onTap: () {
-                Navigator.pushNamed(context, '/film',
-                    arguments: ItemArguments(movie: movies[index]));
+              onTap: (){
+                Navigator.pushNamed(
+                  context, 
+                  '/film',
+                  arguments: ItemArguments(movie: movies[index])
+                );
               },
               child: Column(
                 children: [
