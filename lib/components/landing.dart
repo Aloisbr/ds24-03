@@ -32,128 +32,25 @@ class Landing extends StatelessWidget {
               );
             }
             List totalmovies = snapshot.data;
-            List movies= totalmovies;
-            if(sort != null){
-              movies= sortMovies(sort, totalmovies);
-            }
-
+            List movies= (sort != null) ? sortMovies(sort, totalmovies) : totalmovies;
+            String title= (sort != null) ? sort : 'Movies';
             return Container(
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
-                  
-                  Text('Movies'),
+                  SizedBox(height: 30),
+                  Text(title,
+                    style: TextStyle(
+                      fontSize: 30,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.blue[500]
+                    ),
+                  ),
                   Container(
                     height: 350,
                     child: ListMovie(movies: movies)
                   ),
-                  Container(
-                    color: Colors.red,
-                    height: 200,
-                    child: Column(
-                      children: [
-                        InkWell (
-                          onTap: (){
-                            Navigator.pushReplacement(
-                              context, 
-                              MaterialPageRoute(builder: (context) => HomeScreen(sort: 'Crime'))
-                            );
-                          },
-                          child: Container(
-                            child: Text('Drama'),
-                          ),
-                        ),
-                        InkWell (
-                          onTap: (){
-                            Navigator.pushReplacement(
-                              context, 
-                              MaterialPageRoute(builder: (context) => HomeScreen(sort: 'Drama'))
-                            );
-                          },
-                          child: Container(
-                            child: Text('Action'),
-                          ),
-                        ),
-                        InkWell (
-                          onTap: (){
-                            Navigator.pushReplacement(
-                              context, 
-                              MaterialPageRoute(builder: (context) => HomeScreen(sort: 'Action'))
-                            );
-                          },
-                          child: Container(
-                            child: Text('Crime'),
-                          ),
-                        ),
-                        InkWell (
-                          onTap: (){
-                            Navigator.pushReplacement(
-                              context, 
-                              MaterialPageRoute(builder: (context) => HomeScreen(sort: 'Thriller'))
-                            );
-                          },
-                          child: Container(
-                            child: Text('Thriller'),
-                          ),
-                        ),
-                        InkWell (
-                          onTap: (){
-                            Navigator.pushReplacement(
-                              context, 
-                              MaterialPageRoute(builder: (context) => HomeScreen(sort: 'Crime'))
-                            );
-                          },
-                          child: Container(
-                            child: Text('Crime'),
-                          ),
-                        ),
-                        InkWell (
-                          onTap: (){
-                            Navigator.pushReplacement(
-                              context, 
-                              MaterialPageRoute(builder: (context) => HomeScreen(sort: 'Fantasy'))
-                            );
-                          },
-                          child: Container(
-                            child: Text('Fantasy'),
-                          ),
-                        ),
-                        InkWell (
-                          onTap: (){
-                            Navigator.pushReplacement(
-                              context, 
-                              MaterialPageRoute(builder: (context) => HomeScreen(sort: 'Sci-Fi'))
-                            );
-                          },
-                          child: Container(
-                            child: Text('Sci-Fi'),
-                          ),
-                        ),
-                        InkWell (
-                          onTap: (){
-                            Navigator.pushReplacement(
-                              context, 
-                              MaterialPageRoute(builder: (context) => HomeScreen(sort: 'Adventure'))
-                            );
-                          },
-                          child: Container(
-                            child: Text('Adventure'),
-                          ),
-                        ),
-                        InkWell (
-                          onTap: (){
-                            Navigator.pushReplacement(
-                              context, 
-                              MaterialPageRoute(builder: (context) => HomeScreen())
-                            );
-                          },
-                          child: Container(
-                            child: Text('All'),
-                          ),
-                        ),
-                      ],
-                    )
-                  )
+                  Sort()
                 ],
               )
             );
@@ -167,6 +64,179 @@ class Landing extends StatelessWidget {
       if( movie.kind.contains(sort)) sortMovies.add(movie);
     }
     return sortMovies;
+  }
+}
+
+class Sort extends StatelessWidget {
+  const Sort({
+    Key key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+    
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceAround,
+        children: [
+          Column(
+            children: [
+              SizedBox(
+                width: 150,
+                child: ElevatedButton (
+              
+                  onPressed: (){
+                    Navigator.pushReplacement(
+                      context, 
+                      MaterialPageRoute(builder: (context) => HomeScreen())
+                    );
+                  },
+                  child: Container(
+                    child: Text(
+                      'All',
+                      style: TextStyle(
+                        fontSize: 18
+                      ),
+                    ),
+                    
+                  ),
+                ),
+              ),
+              SizedBox(
+                width: 150,
+                child: ElevatedButton (
+                  onPressed: (){
+                    Navigator.pushReplacement(
+                      context, 
+                      MaterialPageRoute(builder: (context) => HomeScreen(sort: 'Drama'))
+                    );
+                  },
+                  child: Container(
+                    child: Text('Drama',
+                      style: TextStyle(
+                        fontSize: 18
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+              SizedBox(
+                width: 150,
+                child: ElevatedButton (
+                  onPressed: (){
+                    Navigator.pushReplacement(
+                      context, 
+                      MaterialPageRoute(builder: (context) => HomeScreen(sort: 'Action'))
+                    );
+                  },
+                  child: Container(
+                    child: Text('Action',
+                      style: TextStyle(
+                        fontSize: 18
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+              SizedBox(
+                width: 150,
+                child: ElevatedButton (
+                  onPressed: (){
+                    Navigator.pushReplacement(
+                      context, 
+                      MaterialPageRoute(builder: (context) => HomeScreen(sort: 'Thriller'))
+                    );
+                  },
+                  child: Container(
+                    child: Text('Thriller',
+                      style: TextStyle(
+                        fontSize: 18
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+            ],
+          ),
+          Column(
+            children: [
+              SizedBox(
+                  width: 150,
+                  child: ElevatedButton (
+                  onPressed: (){
+                    Navigator.pushReplacement(
+                      context, 
+                      MaterialPageRoute(builder: (context) => HomeScreen(sort: 'Crime'))
+                    );
+                  },
+                  child: Container(
+                    child: Text('Crime',
+                      style: TextStyle(
+                        fontSize: 18
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+              SizedBox(
+                width: 150,
+                child: ElevatedButton (
+                  onPressed: (){
+                    Navigator.pushReplacement(
+                      context, 
+                      MaterialPageRoute(builder: (context) => HomeScreen(sort: 'Fantasy'))
+                    );
+                  },
+                  child: Container(
+                    child: Text('Fantasy',
+                      style: TextStyle(
+                        fontSize: 18
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+              SizedBox(
+                width: 150,
+                child: ElevatedButton (
+                  onPressed: (){
+                    Navigator.pushReplacement(
+                      context, 
+                      MaterialPageRoute(builder: (context) => HomeScreen(sort: 'Sci-Fi'))
+                    );
+                  },
+                  child: Container(
+                    child: Text('Sci-Fi',
+                      style: TextStyle(
+                        fontSize: 18
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+              SizedBox(
+                width: 150,
+                child: ElevatedButton (
+                  onPressed: (){
+                    Navigator.pushReplacement(
+                      context, 
+                      MaterialPageRoute(builder: (context) => HomeScreen(sort: 'Adventure'))
+                    );
+                  },
+                  child: Container(
+                    child: Text('Adventure',
+                      style: TextStyle(
+                        fontSize: 18
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+            ],
+          ),
+        ],
+      )
+    );
   }
 }
 
@@ -198,13 +268,12 @@ class ListMovie extends StatelessWidget {
               },
               child: Column(
                 children: [
-                  
                   Container(
                     height: 220,
                     width: 130,
                     decoration: BoxDecoration(
-                        image: DecorationImage(
-                            image: NetworkImage(movies[index].poster))),
+                      image: DecorationImage(
+                        image: NetworkImage(movies[index].poster))),
                   ),
                   Text(
                     movies[index].title,
@@ -213,7 +282,24 @@ class ListMovie extends StatelessWidget {
                       fontWeight: FontWeight.bold,
                     )
                   ),
-                  Text(movies[index].year),
+                  Text(
+                    movies[index].year,
+                    style: TextStyle(
+                      fontSize: 10,
+                    )
+                  ),
+                  Column(
+                    children: List.generate(
+                      movies[index].kind.length,
+                      (indexKind) => Text(
+                        movies[index].kind[indexKind],
+                        style: TextStyle(
+                          fontSize: 13,
+                          fontWeight: FontWeight.w400,
+                        )
+                      )
+                    ),
+                  )
                 ],
               ),
             ));

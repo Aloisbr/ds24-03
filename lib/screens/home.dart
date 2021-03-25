@@ -26,8 +26,10 @@ class _HomeScreenState extends State<HomeScreen> {
         title: Text('List Movie'),
       ),
       drawer: DrawerMenu(),
-      body: SafeArea(
-        child: Landing(sort: sort)
+      body: SingleChildScrollView(
+              child: SafeArea(
+          child: Landing(sort: sort)
+        ),
       ),
     );
   }
