@@ -6,14 +6,14 @@ class DrawerMenu extends StatelessWidget {
   Widget build(BuildContext context) {
     return Drawer(
       child: SafeArea(
-          child: ListView(
+        child: ListView(
         padding: EdgeInsets.zero,
         children: [
           DrawerHeader(
             decoration: BoxDecoration(color: Colors.blue),
             child: Row(
               children: [
-                Text('Active Color'),
+                Text('Movies'),
               ],
             ),
           ),
@@ -24,15 +24,21 @@ class DrawerMenu extends StatelessWidget {
             },
           ),
           ListTile(
+            title: Text('Home'),
+            onTap: () {
+              Navigator.pushNamed(context, '/home');
+            },
+          ),
+          ListTile(
             title: Text('User Infos'),
             onTap: () {
               Navigator.pushReplacementNamed(context, '/user/infos');
             },
           ),
           ListTile(
-            title: Text('Home'),
+            title: Text('Search'),
             onTap: () {
-              Navigator.pushNamed(context, '/home');
+              Navigator.pushNamed(context, '/search');
             },
           ),
           ListTile(

@@ -82,28 +82,6 @@ class FilmScreen extends StatelessWidget {
           ),
         ));
   }
-
-  String lsToString(List<dynamic> list) {
-    String str = '';
-    for (var i = 0; i < list.length; i++) {
-      str += list[i];
-      if (i < list.length - 1) str += ', ';
-    }
-    return str;
-  }
-
-  lsToSubList(List<dynamic> list) {
-    int mid = (list.length / 2).ceil();
-    List ls1 = [];
-    for (var i = 0; i < mid; i++) {
-      ls1.add(list[i]);
-    }
-    List ls2 = [];
-    for (var i = mid; i < list.length; i++) {
-      ls2.add(list[i]);
-    }
-    return [ls1, ls2];
-  }
 }
 
 class CardMovie extends StatelessWidget {

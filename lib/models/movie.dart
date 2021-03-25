@@ -32,7 +32,8 @@ class Movie {
 
 class ItemArguments {
   final String text;
+  final String title;
   final Movie movie;
 
-  ItemArguments({this.text= '', this.movie});
+  ItemArguments({this.text= '', this.movie, this.title});
 }
